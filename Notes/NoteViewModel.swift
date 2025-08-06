@@ -7,12 +7,14 @@
 
 import Foundation
 
-class NoteViewModel: ObservableObject {
+class NoteViewModel: Identifiable, ObservableObject {
     
+    @Published var title: String
     private var note: Rope
         
-    init(text: String) {
-        self.note = Rope(text: text)
+    init(title: String, text: String = "") {
+        self.title = title
+        self.note  = Rope(text: text)
     }
     
     func getText() -> String {

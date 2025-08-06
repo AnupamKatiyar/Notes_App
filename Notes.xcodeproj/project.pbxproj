@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		689EB55E2E436D90008F3E7C /* RopeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EB55D2E436D90008F3E7C /* RopeTextView.swift */; };
+		689EB59D2E437AF3008F3E7C /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 689EB59B2E437AF3008F3E7C /* Notes.xcdatamodeld */; };
+		689EB59F2E437B3B008F3E7C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EB59E2E437B3B008F3E7C /* Persistence.swift */; };
+		689EB5A22E437C4C008F3E7C /* NoteFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EB5A12E437C4C008F3E7C /* NoteFileManager.swift */; };
+		689EB5A42E438081008F3E7C /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EB5A32E438081008F3E7C /* NotesListView.swift */; };
 		68AAD40F2E4223D000198A53 /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD40E2E4223D000198A53 /* NotesApp.swift */; };
-		68AAD4112E4223D000198A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD4102E4223D000198A53 /* ContentView.swift */; };
+		68AAD4112E4223D000198A53 /* NoteEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD4102E4223D000198A53 /* NoteEditorView.swift */; };
 		68AAD4132E4223D100198A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AAD4122E4223D100198A53 /* Assets.xcassets */; };
 		68AAD4172E4223D100198A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AAD4162E4223D100198A53 /* Preview Assets.xcassets */; };
 		68AAD4212E4223D100198A53 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD4202E4223D100198A53 /* NotesTests.swift */; };
@@ -39,9 +43,13 @@
 
 /* Begin PBXFileReference section */
 		689EB55D2E436D90008F3E7C /* RopeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopeTextView.swift; sourceTree = "<group>"; };
+		689EB59C2E437AF3008F3E7C /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		689EB59E2E437B3B008F3E7C /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		689EB5A12E437C4C008F3E7C /* NoteFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFileManager.swift; sourceTree = "<group>"; };
+		689EB5A32E438081008F3E7C /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
 		68AAD40B2E4223D000198A53 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AAD40E2E4223D000198A53 /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
-		68AAD4102E4223D000198A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		68AAD4102E4223D000198A53 /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorView.swift; sourceTree = "<group>"; };
 		68AAD4122E4223D100198A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68AAD4142E4223D100198A53 /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
 		68AAD4162E4223D100198A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -80,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		689EB5A02E437C30008F3E7C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				689EB59B2E437AF3008F3E7C /* Notes.xcdatamodeld */,
+				689EB59E2E437B3B008F3E7C /* Persistence.swift */,
+				689EB5A12E437C4C008F3E7C /* NoteFileManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		68AAD4022E4223D000198A53 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +123,14 @@
 			children = (
 				68AAD43B2E42240300198A53 /* Ropes */,
 				68AAD40E2E4223D000198A53 /* NotesApp.swift */,
-				68AAD4102E4223D000198A53 /* ContentView.swift */,
+				68AAD4102E4223D000198A53 /* NoteEditorView.swift */,
 				689EB55D2E436D90008F3E7C /* RopeTextView.swift */,
 				68AAD4402E422E0900198A53 /* NoteViewModel.swift */,
 				68AAD4122E4223D100198A53 /* Assets.xcassets */,
 				68AAD4142E4223D100198A53 /* Notes.entitlements */,
+				689EB5A02E437C30008F3E7C /* Storage */,
 				68AAD4152E4223D100198A53 /* Preview Content */,
+				689EB5A32E438081008F3E7C /* NotesListView.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -279,11 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689EB5A22E437C4C008F3E7C /* NoteFileManager.swift in Sources */,
 				68AAD4412E422E0900198A53 /* NoteViewModel.swift in Sources */,
-				68AAD4112E4223D000198A53 /* ContentView.swift in Sources */,
+				689EB59F2E437B3B008F3E7C /* Persistence.swift in Sources */,
+				68AAD4112E4223D000198A53 /* NoteEditorView.swift in Sources */,
 				68AAD43D2E42242D00198A53 /* RopeNode.swift in Sources */,
+				689EB59D2E437AF3008F3E7C /* Notes.xcdatamodeld in Sources */,
 				68AAD40F2E4223D000198A53 /* NotesApp.swift in Sources */,
 				68AAD43F2E42274A00198A53 /* Rope.swift in Sources */,
+				689EB5A42E438081008F3E7C /* NotesListView.swift in Sources */,
 				689EB55E2E436D90008F3E7C /* RopeTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +652,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		689EB59B2E437AF3008F3E7C /* Notes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				689EB59C2E437AF3008F3E7C /* Notes.xcdatamodel */,
+			);
+			currentVersion = 689EB59C2E437AF3008F3E7C /* Notes.xcdatamodel */;
+			path = Notes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 68AAD4032E4223D000198A53 /* Project object */;
 }

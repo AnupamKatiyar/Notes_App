@@ -18,6 +18,7 @@ struct RopeTextView: UIViewRepresentable {
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.delegate = context.coordinator
         textView.isEditable = true
+        textView.autocorrectionType = .no
         return textView
     }
     
