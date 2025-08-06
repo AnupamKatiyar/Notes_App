@@ -39,7 +39,7 @@ class Rope {
         
         if node.left == nil && node.right == nil {
             let left = String(node.text.prefix(index))
-            let right = String(node.text.suffix(node.text.count - index))
+            let right = String(node.text.suffix(abs(node.text.count - index)))
             
             return (RopeNode(text: left), RopeNode(text: right))
         }

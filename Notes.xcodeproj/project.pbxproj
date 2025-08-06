@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		689EB55E2E436D90008F3E7C /* RopeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EB55D2E436D90008F3E7C /* RopeTextView.swift */; };
 		68AAD40F2E4223D000198A53 /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD40E2E4223D000198A53 /* NotesApp.swift */; };
 		68AAD4112E4223D000198A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD4102E4223D000198A53 /* ContentView.swift */; };
 		68AAD4132E4223D100198A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AAD4122E4223D100198A53 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		689EB55D2E436D90008F3E7C /* RopeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopeTextView.swift; sourceTree = "<group>"; };
 		68AAD40B2E4223D000198A53 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AAD40E2E4223D000198A53 /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
 		68AAD4102E4223D000198A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				68AAD43B2E42240300198A53 /* Ropes */,
 				68AAD40E2E4223D000198A53 /* NotesApp.swift */,
 				68AAD4102E4223D000198A53 /* ContentView.swift */,
+				689EB55D2E436D90008F3E7C /* RopeTextView.swift */,
 				68AAD4402E422E0900198A53 /* NoteViewModel.swift */,
 				68AAD4122E4223D100198A53 /* Assets.xcassets */,
 				68AAD4142E4223D100198A53 /* Notes.entitlements */,
@@ -281,6 +284,7 @@
 				68AAD43D2E42242D00198A53 /* RopeNode.swift in Sources */,
 				68AAD40F2E4223D000198A53 /* NotesApp.swift in Sources */,
 				68AAD43F2E42274A00198A53 /* Rope.swift in Sources */,
+				689EB55E2E436D90008F3E7C /* RopeTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

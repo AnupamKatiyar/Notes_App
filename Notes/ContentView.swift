@@ -12,22 +12,23 @@ struct ContentView: View {
     @StateObject private var notes = NoteViewModel(text: "Hi There")
     
     var body: some View {
-        VStack {
-            TextEditor(text: $notes.content)
-                .border(.gray)
-                .padding()
-            
-            HStack {
-                Button("Insert Text") {
-                    notes.insert("Anupam Katiyar", at: (1...10).randomElement()!)
-                }.padding()
-                Button("Delete Text") {
-                    notes.delete(range: 2..<6)
-                }.padding()
+        
+        ZStack {
+            // Background layer that detects taps
+            Color.clear
+                .contentShape(Rectangle()) // makes entire area tappable
+                .onTapGesture {
+                    // Dismiss keyboard on tap outside
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            VStack {
+                RopeTextView(note: notes)
+                    .border(.gray)
+                    .padding()
+                Spacer()
             }
-            
+            .padding()
         }
-        .padding()
     }
 }
 
