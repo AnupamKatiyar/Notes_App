@@ -11,10 +11,13 @@ class NoteViewModel: Identifiable, ObservableObject {
     
     @Published var title: String
     private var note: Rope
+    private var noteObject: NotesTable
+
+    init(_ noteObject: NotesTable) {
+        self.noteObject = noteObject
         
-    init(title: String, text: String = "") {
-        self.title = title
-        self.note  = Rope(text: text)
+        self.title = noteObject.title ?? ""
+        self.note  = Rope(text: noteObject.desc ?? "")
     }
     
     func getText() -> String {
@@ -31,5 +34,14 @@ class NoteViewModel: Identifiable, ObservableObject {
         if !text.isEmpty {
             self.note.insert(text, at: start)
         }
+    }
+    
+    func saveNote() {
+        noteObject.title = title
+        noteObject.desc  = getText()
+        
+        noteObject.updatedAt = Date()
+        
+        try? PersistenceController.shared.container.viewContext.save()
     }
 }

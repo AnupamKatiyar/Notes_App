@@ -39,3 +39,21 @@ final class NotesUITests: XCTestCase {
         }
     }
 }
+
+
+//struct User {
+//    var name: String
+//    
+//    mutating func update(_ n: String) {
+//        self.name = n
+//    }
+//}
+//
+//func sss() {
+//    var u = User(name: "AB")
+//    DispatchQueue.global().async {
+//        u.update("BB")
+//        print(u.name)
+//    }
+//    print(u.name)
+//}

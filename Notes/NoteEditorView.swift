@@ -9,38 +9,44 @@ import SwiftUI
 
 struct NoteEditorView: View {
     
-    @ObservedObject var notes: NoteViewModel
+    @ObservedObject var noteViewModel: NoteViewModel
     
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-//
-//        ZStack {
-//            // Background layer that detects taps
-//            Color.clear
-//                .contentShape(Rectangle()) // makes entire area tappable
-//                .onTapGesture {
-//                    // Dismiss keyboard on tap outside
-//                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-//                }
+
+        ZStack {
+            // Background layer that detects taps
+            Color.clear
+                .contentShape(Rectangle()) // makes entire area tappable
+                .onTapGesture {
+                    // Dismiss keyboard on tap outside
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
             VStack {
-                TextEditor(text: $notes.title)
+                TextEditor(text: $noteViewModel.title)
                     .border(.gray)
                     .cornerRadius(5)
                     .frame(height: 40)
-                RopeTextView(note: notes)
+                RopeTextView(note: noteViewModel)
                     .border(.gray)
                 HStack {
                     Button("Save") {
                         //Save logic to db or auto save will also work
+                        noteViewModel.saveNote()
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
             .padding()
-//        }
+        }
+        .navigationTitle($noteViewModel.title).navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteEditorView(notes: NoteViewModel(title: "Hi"))
+        let t = NotesTable(context: PersistenceController.shared.container.viewContext)
+        NoteEditorView(noteViewModel: NoteViewModel(t))
     }
 }
