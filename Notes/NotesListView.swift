@@ -9,33 +9,35 @@ import SwiftUI
 
 struct NotesListView: View {
     
-    @ObservedObject private var notesViewModel: NoteListViewModel
-    
-    init(_ viewModel: NoteListViewModel) {
-        self.notesViewModel = viewModel
-    }
-    
-    //@State private var notes: [NoteViewModel] = []
+    @StateObject private var notesViewModel = NoteListViewModel()
+    @StateObject private var coordinator = AppCoordinator()
     
     var body: some View {
         NavigationView {
-            List(notesViewModel.notes) { note in
-                NavigationLink(note.title ?? "") {
-                    let vm = NoteViewModel(note)
-                    NoteEditorView(noteViewModel: vm)
-                }
-            }.navigationTitle("My Notes")
-                .toolbar {
-                    Button("Add") {
-                        notesViewModel.addNewNote()
+            List {
+                ForEach(notesViewModel.notes, id: \.id) { note in
+                    NavigationLink(note.title ?? "") {
+                        coordinator.createView(for: .editor(note))
                     }
                 }
+                .onDelete(perform: deleteNotes) //Doesn't work without foreach
+            }
+            .navigationTitle("My Notes")
+            .toolbar {
+                Button("Add") {
+                    notesViewModel.addNewNote()
+                }
+            }
         }
+    }
+    
+    private func deleteNotes(offsets: IndexSet) {
+        notesViewModel.deleteNotes(at: offsets)
     }
 }
 
 struct NotesListView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesListView(NoteListViewModel())
+        NotesListView()
     }
 }

@@ -42,6 +42,10 @@ class NoteViewModel: Identifiable, ObservableObject {
         
         noteObject.updatedAt = Date()
         
-        try? PersistenceController.shared.container.viewContext.save()
+        do {
+            try PersistenceController.shared.container.viewContext.save()
+        } catch {
+            print(error)
+        }
     }
 }

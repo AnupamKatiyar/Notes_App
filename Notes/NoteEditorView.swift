@@ -9,8 +9,9 @@ import SwiftUI
 
 struct NoteEditorView: View {
     
-    @ObservedObject var noteViewModel: NoteViewModel
-    
+    @ObservedObject var coordinator: AppCoordinator
+    @EnvironmentObject var noteViewModel: NoteViewModel
+
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -34,7 +35,13 @@ struct NoteEditorView: View {
                     Button("Save") {
                         //Save logic to db or auto save will also work
                         noteViewModel.saveNote()
+                        
+                        NotificationCenter.default.post(
+                            name: .noteDidUpdate,
+                            object: nil
+                        )
                         presentationMode.wrappedValue.dismiss()
+//                        coordinator.dismiss()
                     }
                 }
             }
@@ -47,6 +54,7 @@ struct NoteEditorView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let t = NotesTable(context: PersistenceController.shared.container.viewContext)
-        NoteEditorView(noteViewModel: NoteViewModel(t))
+        NoteEditorView(coordinator: AppCoordinator())
+            .environmentObject(NoteViewModel(t))
     }
 }

@@ -23,6 +23,7 @@
 		68AAD43D2E42242D00198A53 /* RopeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD43C2E42242D00198A53 /* RopeNode.swift */; };
 		68AAD43F2E42274A00198A53 /* Rope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD43E2E42274A00198A53 /* Rope.swift */; };
 		68AAD4412E422E0900198A53 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAD4402E422E0900198A53 /* NoteViewModel.swift */; };
+		C1BE33BC2E4FDA310061DD39 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE33BB2E4FDA280061DD39 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		68AAD43C2E42242D00198A53 /* RopeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopeNode.swift; sourceTree = "<group>"; };
 		68AAD43E2E42274A00198A53 /* Rope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rope.swift; sourceTree = "<group>"; };
 		68AAD4402E422E0900198A53 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		C1BE33BB2E4FDA280061DD39 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		68AAD40D2E4223D000198A53 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C1BE33BB2E4FDA280061DD39 /* AppCoordinator.swift */,
 				68AAD40E2E4223D000198A53 /* NotesApp.swift */,
 				68AAD43B2E42240300198A53 /* Ropes */,
 				68AAD4102E4223D000198A53 /* NoteEditorView.swift */,
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BE33BC2E4FDA310061DD39 /* AppCoordinator.swift in Sources */,
 				689EB5A22E437C4C008F3E7C /* NoteFileManager.swift in Sources */,
 				68AAD4412E422E0900198A53 /* NoteViewModel.swift in Sources */,
 				689EB59F2E437B3B008F3E7C /* Persistence.swift in Sources */,
